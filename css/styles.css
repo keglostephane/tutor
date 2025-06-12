@@ -1,0 +1,220 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	bottom: 0;
+	box-sizing: border-box;
+}
+
+/* Defaults */
+a {
+	text-decoration: none;
+}
+
+/* CSS variables */
+:root {
+	/** Color **/
+	--primary-color: #FA6A5F;
+	--secondary-color: #FFC05A;
+	--black-color: #272D35;
+	--grey-color: #F9FAFB;
+
+	/** Margin **/
+	--mg-sm: 15px;
+	--mg-md: 30px;
+	--mg-lg: 50px;
+
+	/** Padding **/
+	--pd-sm: 15px;
+	--pd-md: 30px;
+	--pd-lg: 50px;
+
+	/** Font Size **/
+	--fs-sm: 1.1rem;
+	--fs-md: 1.5rem;
+	--fs-lg: 3rem;
+	--fs-xl: 3.5rem;
+
+	/** Gap **/
+	--gp-sm: 25px;
+	--gp-md: 50px;
+	--gp-lg: 100px;
+}
+
+/* Utilities */
+/** Flexbox **/
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+/** Text **/
+.title-xl {
+	font-size: var(--fs-xl);
+}
+
+.title-lg {
+	font-size: var(--fs-lg);
+}
+
+.text-md {
+	font-size: var(--fs-md);
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+/** Buttons **/
+.button-md {
+	background-color: var(--secondary-color);
+	color: var(--black-color);
+	border-radius: 50px;
+	font-size: var(--fs-md);
+	padding: var(--pd-sm) var(--pd-md);
+	font-weight: 700;
+}
+
+.button-sm {
+	background-color: var(--secondary-color);
+	color: var(--black-color);
+	border-radius: 50px;
+	font-size: var(--fs-sm);
+	padding: var(--pd-sm) var(--pd-md);
+	font-weight: 700;
+}
+
+/** Colors **/
+.bg-primary {
+	background-color: var(--primary-color);
+}
+
+.bg-secondary {
+	background-color: var(--secondary-color);
+}
+
+.bg-black {
+	background-color: var(--black-color);
+}
+
+.bg-grey {
+	background-color: var(--grey-color);
+}
+
+.fg-black {
+	color: var(--black-color);
+}
+
+/** Containers **/
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.container-md {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.container-lg {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Content */
+html,
+body {
+	font-family: "Open Sans", sans-serif;
+	color: var(--black-color);
+	line-height: 1.5;
+}
+
+/* Header */
+header {
+	background-image: url("../images/header-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 110vh;
+}
+
+/* Navigation */
+nav {
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--pd-sm);
+}
+
+.logo {
+	width: 150px;
+}
+
+.menu-links {
+	align-items: center;
+}
+
+.menu-links	ul {
+	list-style-type: none;
+	font-size: 1.1rem;
+	color: white;
+	font-weight: 700;
+}
+	
+.menu-links	li {
+	display: inline-block;
+	margin-right: var(--mg-md);
+}
+		
+.menu-links	a {
+	text-decoration: none;
+	color: white;
+}
+
+.menu-links a:hover {
+	color: var(--secondary-color);
+}
+
+.social-links i {
+	color: white;
+	font-size: 2.5rem;
+	margin-right: var(--mg-md);
+}
+
+.social-links i:hover {
+	color: var(--secondary-color);
+}
+
+/* Hero */
+.hero {
+	justify-content: center;
+	align-items: center;
+	gap: var(--gp-lg);
+	color: white;
+	margin-top: var(--mg-lg);
+	position: relative;
+}
+
+.hero-text h1 {
+	margin-bottom: var(--mg-sm);
+}
+
+.hero-text p {
+	margin-bottom: var(--mg-lg);
+}
+
+.hero a:hover {
+	background-color: var(--primary-background);
+	border: 1px solid #ffffff;
+	color: #ffffff;
+}
+
+header svg {
+	position: absolute;
+	top: 105vh;
+	height: 10vh;
+	width: 100%;
+}
