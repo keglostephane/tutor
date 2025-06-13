@@ -220,7 +220,7 @@ header svg {
 /* Media Queries */
 
 /** Small Desktop **/
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 993px) and (max-width: 1200px) {
 	.container {
 		max-width: 992px;
 		margin: 0 auto;
@@ -249,4 +249,8 @@ header svg {
 	.hero-img img {
 		width: 550px;
 	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	
 }
