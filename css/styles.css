@@ -147,7 +147,8 @@ nav {
 	list-style-type: none;
 	font-size: var(--fs-sm);
 	color: white;
-	font-weight: 700;
+	font-weight: 600;
+	padding: 0;
 }
 	
 .menu-links	li {
@@ -236,6 +237,7 @@ header svg {
 
 	.hero {
 		margin-top: var(--mg-sm);
+		padding: var(--pd-mg);
 	}
 
 	.hero-flex {
@@ -251,6 +253,53 @@ header svg {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+/** Tablets **/
+@media (min-width: 769px) and (max-width: 992px) {
+	.container {
+		max-width: 768px;
+		margin: 0 auto;
+	}
+
+	header {
+		height: 160vh;
+	}
+
+	header svg {
+		top: 150vh;
+		height: 10vh;
+	}
+
+	nav {
+		padding: var(--pd-md);
+	}
 	
+	.logo {
+		display: none;
+	}
+
+	.menu-links li {
+		margin-right: var(--mg-sm);
+	}
+
+	.menu-links li:first-of-type {
+		margin-left: 25px;
+	}
+
+	.social-links i {
+		font-size: 2rem;
+	}
+
+	.hero-flex {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.hero {
+		margin-top: var(--mg-xl);
+		padding: var(--pd-md);
+	}
+
+	.hero-img img {
+		width: 550px;
+	}
 }
