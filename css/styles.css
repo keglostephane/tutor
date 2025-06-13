@@ -24,6 +24,7 @@ a {
 	--mg-sm: 15px;
 	--mg-md: 30px;
 	--mg-lg: 50px;
+	--mg-xl: 60px;
 
 	/** Padding **/
 	--pd-sm: 15px;
@@ -169,7 +170,7 @@ nav {
 
 .social-links i {
 	color: white;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	margin-left: var(--mg-md);
 }
 
@@ -217,18 +218,35 @@ header svg {
 }
 
 /* Media Queries */
-/* @media (max-width: 992px) { */
-/* 	.header { */
-		
-/* 	} */
 
-/* 	.nav { */
-/* 		max-width: 992px; */
-/* 		margin: 0 auto; */
-/* 		padding: 500px; */
-/* 	} */
+/** Small Desktop **/
+@media (min-width: 992px) and (max-width: 1199px) {
+	.container {
+		max-width: 992px;
+		margin: 0 auto;
+	}
 
-/* 	.logo { */
-/* 		width: 100px; */
-/* 	} */
-/* } */
+	nav {
+		padding: var(--pd-md);
+	}
+
+	.logo {
+		width: 125px;
+	}
+
+	.hero {
+		margin-top: var(--mg-sm);
+	}
+
+	.hero-flex {
+		gap: var(--gp-md);
+	}
+
+	.hero-text {
+		margin: var(--mg-sm);
+	}
+
+	.hero-img img {
+		width: 550px;
+	}
+}
