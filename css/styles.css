@@ -7,11 +7,6 @@
 	box-sizing: border-box;
 }
 
-/* Defaults */
-a {
-	text-decoration: none;
-}
-
 /* CSS variables */
 :root {
 	/** Color **/
@@ -43,6 +38,17 @@ a {
 	--gp-lg: 100px;
 }
 
+/* Defaults Styles */
+a {
+	text-decoration: none;
+	color: white;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
 /* Utilities */
 /** Flexbox **/
 .nav-flex {
@@ -64,9 +70,8 @@ a {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 50px;
+	gap: var(--gp-md);
 }
-
 /** Text **/
 .title {
 	font-size: var(--fs-lg);
@@ -79,7 +84,6 @@ a {
 .capitalize {
 	text-transform: capitalize;
 }
-
 /** Buttons **/
 .button {
 	background-color: var(--secondary-color);
@@ -89,7 +93,6 @@ a {
 	padding: var(--pd-sm) var(--pd-md);
 	font-weight: 700;
 }
-
 /** Colors **/
 .bg-primary {
 	background-color: var(--primary-color);
@@ -117,6 +120,17 @@ a {
 	margin: 0 auto;
 }
 
+.navbar-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.hero-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
 /* Content */
 html,
 body {
@@ -131,12 +145,19 @@ header {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;
-	height: 110vh;
+	height: 115vh;
 }
 
 /* Navigation */
 nav {
+	height: 80px;
+	position: relative;
+	border-bottom: 1px solid white;
+}
+
+.navbar-container {
 	padding: var(--pd-sm);
+	height: 100%;
 }
 
 .logo {
@@ -182,13 +203,13 @@ nav {
 /* Hero */
 .hero {
 	color: white;
-	margin-top: var(--mg-lg);
+	margin-top: 5vh;
 	padding: var(--pd-sm);
 	position: relative;
 }
 
 .hero-text {
-	padding: var(--pd-sm);
+	/* padding: var(--pd-sm); */
 }
 
 .hero-text h1 {
@@ -197,9 +218,6 @@ nav {
 
 .hero-text p {
 	margin-bottom: var(--mg-md);
-}
-
-.hero-img {
 }
 
 .hero a {
@@ -213,39 +231,27 @@ nav {
 
 header svg {
 	position: absolute;
-	top: 105vh;
+	top: 110vh;
 	height: 10vh;
 	width: 100%;
+}
+
+.mobile-menu-toggle,
+.mobile-links {
+	display: none;
 }
 
 /* Media Queries */
 
 /** Small Desktop **/
 @media (min-width: 993px) and (max-width: 1200px) {
-	.container {
-		max-width: 992px;
-		margin: 0 auto;
-	}
 
-	nav {
+	.navbar-container {
 		padding: var(--pd-md);
 	}
 
-	.logo {
-		width: 125px;
-	}
-
 	.hero {
-		margin-top: var(--mg-sm);
-		padding: var(--pd-mg);
-	}
-
-	.hero-flex {
-		gap: var(--gp-md);
-	}
-
-	.hero-text {
-		margin: var(--mg-sm);
+		padding: var(--pd-md);
 	}
 
 	.hero-img img {
@@ -255,10 +261,6 @@ header svg {
 
 /** Tablets **/
 @media (min-width: 769px) and (max-width: 992px) {
-	.container {
-		max-width: 768px;
-		margin: 0 auto;
-	}
 
 	header {
 		height: 160vh;
@@ -269,8 +271,12 @@ header svg {
 		height: 10vh;
 	}
 
-	nav {
+	.navbar-container {
 		padding: var(--pd-md);
+	}
+
+	.nav-flex {
+		justify-content: center;
 	}
 	
 	.logo {
@@ -295,7 +301,6 @@ header svg {
 	}
 
 	.hero {
-		margin-top: var(--mg-xl);
 		padding: var(--pd-md);
 	}
 
@@ -303,3 +308,4 @@ header svg {
 		width: 550px;
 	}
 }
+
