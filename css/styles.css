@@ -309,3 +309,41 @@ header svg {
 	}
 }
 
+/** Tablets and Larger phones **/
+@media (min-width: 576px) and (max-width: 768px) {
+
+	.navbar-container {
+		padding: var(--pd-md);
+	}
+
+	.menu-links,
+	.mobile-links {
+		display: none;
+	}
+
+	.mobile-menu-toggle {
+		display: block;
+		color: white;
+		font-size: 2.5rem;
+	}
+
+	header {
+		height: 160vh;
+	}
+
+	header svg {
+		top: 150vh;
+		height: 10vh;
+	}
+
+	.hero-flex {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.hero-img img {
+		width: 550px;
+	}
+
+}
+
