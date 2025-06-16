@@ -152,7 +152,14 @@ header {
 nav {
 	height: 80px;
 	position: relative;
-	/* border-bottom: 1px solid white; */
+}
+
+nav.transparent {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: var(--black-color);
+	opacity: 0.9;
 }
 
 .navbar-container {
@@ -348,7 +355,7 @@ header svg {
 		top: 80px;
 		width: 100%;
 		left: 0;
-		z-index: 1;
+		z-index: 100;
 		height: calc(100vh - 80px);
 		background-color: var(--black-color);
 		opacity: 0.9;
