@@ -1,26 +1,32 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleMenu = document.querySelector('#toggle-menu')
-  const toggleMenuIcon = document.querySelector('#toggle-menu i')
-  const mobileMenu = document.querySelector('.mobile-links')
-  const navBar = document.querySelector('nav')
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector('header')
+    const toggleMobileMenu = document.querySelector("#mobile-menu-toggle")
+    const toggleMobileMenuIcon = document.querySelector("#mobile-menu-toggle i")
+    const menuLinks = document.querySelector(".menu-links")
+    const menuLinksItem = document.querySelector(".menu-links ul")
 
-  toggleMenu.addEventListener('click', function () {
-    mobileMenu.classList.toggle('active')
-
-    if (toggleMenuIcon.classList.contains('fa-bars')) {
-      toggleMenuIcon.classList.replace('fa-bars', 'fa-xmark')
-    } else {
-      toggleMenuIcon.classList.replace('fa-xmark', 'fa-bars')
+    menuLinksItem.addEventListener("click", function () {
+        menuLinks.classList.toggle("mobile-menu")
+        toggleMobileMenuIcon.classList.replace("fa-xmark", "fa-bars")
+    })
+    
+    toggleMobileMenu.addEventListener("click", function () {
+        menuLinks.classList.toggle("mobile-menu")
+        
+        if (toggleMobileMenuIcon.classList.contains("fa-bars")) {
+            toggleMobileMenuIcon.classList.replace("fa-bars", "fa-xmark")
+        } else {
+            toggleMobileMenuIcon.classList.replace("fa-xmark", "fa-bars")
+        }
+    })
+    
+    function highlightHeader () {
+        if (window.scrollY > 0) {
+            header.classList.add("highlight")
+        } else {
+            header.classList.remove("highlight")
+        }
     }
-  })
 
-  function toggleNavbarTransparency () {
-    if (window.scrollY > 0) {
-      navBar.classList.add('transparent')
-    } else {
-      navBar.classList.remove('transparent')
-    }
-  }
-
-  window.addEventListener('scroll', toggleNavbarTransparency)
+    window.addEventListener("scroll", highlightHeader)
 })
