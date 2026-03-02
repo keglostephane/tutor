@@ -37,10 +37,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    cursor: pointer;
-}
-
 img {
     max-width: 100%;
 }
@@ -80,12 +76,6 @@ img {
     width: fit-content;
 }
 
-.btn:hover {
-    color: white;
-    border: 1px solid white;
-    background: var(--primary);
-}
-
 .highlight {
     background: var(--black);
 }
@@ -123,17 +113,9 @@ header nav a {
     font-size: 16px;
 }
 
-header nav a:hover {
-    color: var(--secondary);
-}
-
 header nav i {
     font-size: 24px;
     color: white;
-}
-
-header nav i:hover {
-    color: var(--secondary);
 }
 
 header nav #mobile-menu-toggle {
@@ -262,6 +244,10 @@ header nav #mobile-menu-toggle {
         font-size: 2rem;
     }
 
+    header nav .menu-links a:active {
+        color: var(--secondary);
+    }
+
     header nav .menu-links i {
         font-size: 2.5rem;
     }
@@ -311,5 +297,30 @@ header nav #mobile-menu-toggle {
     .hero-content a.btn {
         width: 100%;
     }
+
+    .hero-content a.btn:active {
+        transform: scale(1.05);
+    }
 }
 
+/* Restrict hovering for compatible devices */
+
+@media (hover: hover) {
+    a:hover {
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        color: white;
+        border: 1px solid white;
+        background: var(--primary);
+    }
+
+    header nav a:hover {
+        color: var(--secondary);
+    }
+
+    header nav i:hover {
+        color: var(--secondary);
+    }
+}
