@@ -69,8 +69,8 @@ img {
 /* Buttons */
 
 .btn {
-    color: black;
-    background: var(--secondary);
+    color: white;
+    background: var(--black);
     padding: 20px;
     border-radius: 50px;
     width: fit-content;
@@ -311,9 +311,8 @@ header nav #mobile-menu-toggle {
     }
 
     .btn:hover {
-        color: white;
-        border: 1px solid white;
-        background: var(--primary);
+        color: black;
+        background: var(--secondary);
     }
 
     header nav a:hover {
