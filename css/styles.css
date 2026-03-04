@@ -86,54 +86,57 @@ img {
 
 /* Main Navigation */
 
-header {
+header.main-header {
     position: fixed;
     background: transparent;
 }
 
-header nav {
+header.main-header.highlight {
+    background: var(--black);
+}
+
+header.main-header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header nav .logo {
+header.main-header nav .logo {
     width: 150px;
 }
 
-header nav .menu-links ul {
+header.main-header nav .main-menu-links {
     display: flex;
     gap: 1.5rem;
 }
 
-header nav a {
+header.main-header nav a {
     text-transform: capitalize;
     color: white;
     font-weight: 700;
     font-size: 1.2rem;
 }
 
-header nav i {
+header.main-header nav i {
     font-size: 2rem;
     color: white;
 }
 
-header nav #mobile-menu-toggle {
+header.main-header nav .mobile-menu-toggle {
     display: none;
 }
 
 
-
 /* Hero */
 
-.hero {
+section.hero {
     background: url("../images/header-background.jpg");
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
 }
 
-.hero-wrapper {
+section.hero .hero-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,33 +144,33 @@ header nav #mobile-menu-toggle {
     gap: 16px;
 }
 
-.hero-content {
+section.hero .hero-content {
     display: flex;
     flex-direction: column;
     gap: 32px;
     color: white;
 }
 
-.hero-content h1 {
+section.hero .hero-content h1 {
     font-size: 3.5rem;
     line-height: 1.2;
 }
 
-.hero-content p {
+section.hero .hero-content p {
     font-size: 1.5rem;
 }
 
-.hero-content a {
+section.hero .hero-content a {
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.hero-image {
+section.hero .hero-image {
     flex: none;
     flex-basis: 60%;
 }
 
-.svg-wrapper svg {
+section.hero svg.wave {
     display: block;
     height: 50px;
     width: 100%;
@@ -182,39 +185,39 @@ header nav #mobile-menu-toggle {
         padding: 12px 16px;
     }
     
-    header nav .logo {
+    header.main-header nav .logo {
         width: 125px;
     }
 
-    header nav .menu-links ul {
+    header.main-header nav .main-menu-links {
         gap: 1rem;
     }
 
-    header nav a {
+    header.main-header nav a {
         font-size: 1rem;
     }
 
-    header nav i {
+    header.main-header nav i {
         font-size: 1.5rem;
     }
 
-    .hero-content {
+    section.hero .hero-content {
         gap: 24px;
     }
 
-    .hero-content h1 {
+    section.hero .hero-content h1 {
         font-size: 3rem;
     }
 
-    .hero-content p {
+    section.hero .hero-content p {
         font-size: 1.4rem;
     }
 
-    .hero-content a {
+    section.hero .hero-content a {
         font-size: 1.1rem;
     }
 
-    .hero-image {
+    section.hero .hero-image {
         flex-basis: 50%;
     }
 }
@@ -225,11 +228,11 @@ header nav #mobile-menu-toggle {
         padding: 16px 20px;
     }
 
-    header nav .logo {
+    header.main-header nav .logo {
         width: 150px;
     }
 
-    header nav .menu-links {
+    header.main-header nav .main-menu {
         display: block;
         position: absolute;
         top: 90px;
@@ -241,76 +244,76 @@ header nav #mobile-menu-toggle {
         transition: transform 0.5s ease;
     }
 
-    header nav .menu-links.mobile-menu {
+    header.main-header nav .main-menu.mobile-menu {
         transform: translateX(0);
     }
 
-    header nav .menu-links ul {
+    header.main-header nav .main-menu-links {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100%;
     }
 
-    header nav .menu-links a {
+    header.main-header nav .main-menu a {
         font-size: 2rem;
     }
 
-    header nav .menu-links a:active {
+    header.main-header nav .main-menu a:active {
         color: var(--secondary);
     }
 
-    header nav .menu-links i {
+    header.main-header nav .main-menu i {
         font-size: 2.5rem;
     }
 
-    header nav #mobile-menu-toggle {
+    header.main-header nav .mobile-menu-toggle {
         display: block;
     }
 
-    header nav #mobile-menu-toggle:active {
+    header.main-header nav .mobile-menu-toggle:active {
         transform: scale(1.5);
     }
     
 
-    header nav #mobile-menu-toggle i {
+    header.main-header nav .mobile-menu-toggle i {
         font-size: 32px;
         color: white;
     }
 
-    .hero {
+    section.hero {
         padding-top: 10rem;
     }
 
-    .hero-wrapper {
+    section.hero .hero-wrapper {
         flex-direction: column;
         justify-content: space-around;
         gap: 64px;
         text-align: center;
     }
 
-    .hero-content {
+    section.hero .hero-content {
         gap: 32px;
         align-items: center;
     }
 
-    .hero-content h1 {
+    section.hero .hero-content h1 {
         font-size: 2.5rem;
     }
 
-    .hero-content p {
+    section.hero .hero-content p {
         font-size: 1.5rem;
     }
 
-    .hero-content a {
+    section.hero .hero-content a {
         font-size: 1.5rem;
     }
 
-    .hero-content a.btn {
+    section.hero .hero-content a.btn {
         width: 100%;
     }
 
-    .hero-content a.btn:active {
+    section.hero .hero-content a.btn:active {
         transform: scale(1.05);
     }
 }
@@ -327,11 +330,11 @@ header nav #mobile-menu-toggle {
         background: var(--secondary);
     }
 
-    header nav a:hover {
+    header.main-header nav a:hover {
         color: var(--secondary);
     }
 
-    header nav i:hover {
+    header.main-header nav i:hover {
         color: var(--secondary);
     }
 }
