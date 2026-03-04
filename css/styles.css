@@ -287,8 +287,8 @@ section.hero svg.wave {
 
     section.hero .hero-wrapper {
         flex-direction: column;
-        justify-content: space-around;
-        gap: 64px;
+        justify-content: center;
+        gap: 48px;
         text-align: center;
     }
 
