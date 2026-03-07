@@ -76,8 +76,19 @@ img {
     width: fit-content;
 }
 
+
 .highlight {
     background: var(--black);
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    left: calc(30% / 2);
+    bottom: -10px;
+    width: 70%;
+    height: 10px;
+    background: var(--primary);
 }
 
 /*****************/
@@ -89,6 +100,7 @@ img {
 header.main-header {
     position: fixed;
     background: transparent;
+    z-index: 100;
 }
 
 header.main-header.highlight {
@@ -176,7 +188,58 @@ section.hero svg.wave {
     width: 100%;
 }
 
+/* Course Topics */
+
+section.course-topics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+    container: course-topics / inline-size;
+}
+
+section.course-topics header {
+    text-align: center;
+    max-width: 90ch;
+}
+
+section.course-topics header .title {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-top: 32px;
+    position: relative;
+}
+
+section.course-topics header .intro {
+    font-size: 1.5rem;
+    font-weight: 350;
+    margin-top: 32px;
+}
+
+section.course-topics .topics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 48px 32px;
+}
+
+section.course-topics .topic .topic-image {
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+section.course-topics .topic .topic-title {
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+/*****************/
 /* Media Queries */
+/*****************/
+
+/* Large Tablets and Small Desktops */
 
 @media (max-width: 1024px) {
 
@@ -221,6 +284,8 @@ section.hero svg.wave {
         flex-basis: 50%;
     }
 }
+
+/* Tablets and Smartphones */
 
 @media (max-width: 768px) {
     .container {
@@ -318,7 +383,7 @@ section.hero svg.wave {
     }
 }
 
-/* Restrict hovering for compatible devices */
+/* Disable hovering for mobiles and tablets */
 
 @media (hover: hover) {
     a:hover {
@@ -337,4 +402,37 @@ section.hero svg.wave {
     header.main-header nav i:hover {
         color: var(--secondary);
     }
+
+    section.course-topics .topic .topic-image:hover {
+        transform: scale(1.1);
+    }
 }
+
+/*********************/
+/* Container Queries */
+/*********************/
+
+/* Course Topics Grid 2 Columns */
+
+@container course-topics (width < 768px) {    
+    section.course-topics header .title {
+        font-size: 2.2rem;
+    }
+    
+    section.course-topics .topics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Course Topics Grid 1 Column */
+
+@container course-topics (width < 540px) {    
+    section.course-topics header .title {
+        font-size: 1.6rem;
+    }
+
+    section.course-topics .topics {
+        grid-template-columns: 1fr;
+    }
+} 
+
