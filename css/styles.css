@@ -261,7 +261,7 @@ section header {
     align-items: center;
     text-align: center;
     gap: 16px;
-    padding: 32px;
+    padding: 32px 24px;
 }
 
 .course-chapters .chapter .chapter-title {
@@ -486,7 +486,7 @@ section header {
     }
     
     .course-chapters .chapter .chapter-icon {
-        max-width: 20%;
+        max-width: 30%;
     }
 }
 
