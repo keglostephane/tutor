@@ -16,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body {
@@ -262,6 +263,9 @@ section header {
     text-align: center;
     gap: 16px;
     padding: 32px 24px;
+    animation: slide-left both;
+    animation-timeline: view();
+    animation-range: entry 50%;
 }
 
 .course-chapters .chapter .chapter-title {
@@ -269,9 +273,26 @@ section header {
 }
 
 .course-chapters .chapter .chapter-icon {
-    max-width: 40%;
+    max-width: 50%;
 }
 
+/**************/
+/* Animations */
+/**************/
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    50% {
+        transform: translateX(50vw);
+    }
+
+    100 % {
+        transform: translateX(0vw);
+    }
+}
 
 /*****************/
 /* Media Queries */
