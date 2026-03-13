@@ -290,7 +290,7 @@ section header {
     }
 
     100 % {
-        transform: translateX(0vw);
+        transform: translateX(0);
     }
 }
 
@@ -464,6 +464,12 @@ section header {
 
     .course-topics .topic .topic-image:hover {
         transform: scale(1.1);
+    }
+}
+
+@media (hover: none) {
+    .course-chapters .chapters .chapter {
+        animation: none;
     }
 }
 
