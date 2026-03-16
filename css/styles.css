@@ -30,7 +30,8 @@ section {
     width: 100%;
 }
 
-ul {
+ul,
+ol {
     list-style-type: none;
 }
 
@@ -276,6 +277,101 @@ section header {
     max-width: 50%;
 }
 
+/* Course Summary */
+
+.course-summary {
+    background: var(--grey);
+    display: block;
+    container: course-summary / inline-size;
+}
+
+.course-summary header {
+    max-width: 100%;
+}
+
+.course-summary .container {
+    margin: 32px auto;
+}
+
+.course-summary .accordion {
+    background: white;
+    counter-reset: chapter;
+    padding: 32px 24px;
+}
+
+.course-summary .accordion input {
+    display: none;
+}
+
+.course-summary .accordion input:checked + label {
+    border: none;
+}
+
+.course-summary .accordion input:checked + label::after {
+    content: "−";
+    font-size: 2rem;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.course-summary .accordion input:checked ~ .accordion-content {
+    display: block;
+}
+
+
+.course-summary .accordion label {
+    counter-increment: chapter;
+    text-transform: capitalize;
+    color: white;
+    background: var(--primary);
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 16px;
+    margin: 16px auto;
+    position: relative;
+}
+
+.course-summary .accordion label::before {
+    content: counter(chapter) ". ";
+}
+
+.course-summary .accordion label::after {
+    content: "+";
+    font-size: 2rem;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.course-summary .accordion label:hover {
+    background: var(--secondary);
+    color: var(--black);
+}
+
+.course-summary .accordion .accordion-content {
+    display: none;
+}
+
+.course-summary .accordion-content ol {
+    counter-reset: section;
+}
+
+.course-summary .accordion-content li {
+    counter-increment: section;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 20px;
+}
+
+.course-summary .accordion-content li:last-of-type {
+    border-bottom: none;
+}
+
+.course-summary .accordion-content li::before {
+    content: counter(chapter) "." counter(section) " ";
+}
+
 /**************/
 /* Animations */
 /**************/
@@ -440,6 +536,15 @@ section header {
     .hero .hero-content a.btn:active {
         transform: scale(1.05);
     }
+
+    .course-summary .accordion {
+        padding: 16px;
+    }
+
+    .course-summary .accordion label {
+        padding: 16px;
+        font-size: 1.2rem;
+    }
 }
 
 /* Disable hovering for mobiles and tablets */
@@ -522,3 +627,19 @@ section header {
         font-size: 1.6rem;
     }
 }
+
+/* Course Summary */
+
+@container course-summary (width < 800px) {
+    .course-summary header .title {
+        font-size: 2.2rem;
+    }
+}
+
+@container course-summary (width < 580px) {
+    .course-summary header .title {
+        font-size: 1.6rem;
+    }
+}
+
+
