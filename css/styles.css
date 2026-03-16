@@ -345,11 +345,6 @@ section header {
     top: 5px;
 }
 
-.course-summary .accordion label:hover {
-    background: var(--secondary);
-    color: var(--black);
-}
-
 .course-summary .accordion .accordion-content {
     display: none;
 }
@@ -569,6 +564,11 @@ section header {
 
     .course-topics .topic .topic-image:hover {
         transform: scale(1.1);
+    }
+
+    .course-summary .accordion label:hover {
+    background: var(--secondary);
+    color: var(--black);
     }
 }
 
