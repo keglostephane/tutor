@@ -290,7 +290,7 @@ section header {
 }
 
 .course-summary .container {
-    margin: 32px auto;
+    margin: 32px auto calc(32px + calc(2.5rem * 1.6)) ;
 }
 
 .course-summary .accordion {
@@ -635,11 +635,19 @@ section header {
     .course-summary header .title {
         font-size: 2.2rem;
     }
+
+    .course-summary .container {
+        margin: 32px auto calc(32px + calc(2.2rem * 1.6));
+    }
 }
 
 @container course-summary (width < 580px) {
     .course-summary header .title {
         font-size: 1.6rem;
+    }
+
+    .course-summary .container {
+        margin: 32px auto calc(32px + calc(1.6rem * 1.6));
     }
 }
 
