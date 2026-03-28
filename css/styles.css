@@ -373,15 +373,14 @@ section header {
     background-image: url("../images/audience.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 70vh;
-    position: relative;
+    background-position: top center;
     container: course-audience / inline-size;
 }
 
 .course-audience .wrapper {
-    position: absolute;
-    max-width: 100vw;
-    height: 70vh;
+    position: relative;
+    max-width: 51%;
+    top: 0;
     left: 49%;
     background-color: var(--primary);
     color: white;
@@ -701,16 +700,16 @@ section header {
 /* Course Audience Content Only */
 
 
-@container course-audience (width < 940px) {
+@container course-audience (width < 920px) {
     .course-audience .wrapper {
         left: 0;
+        max-width: 100%;
     }
 }
 
 @container course-audience (width < 480px) {
     .course-audience .wrapper {
-        padding: 18px;
-        min-height: fit-content;
+        padding: 24px;
     }
 
     .course-audience .wrapper h2 {
